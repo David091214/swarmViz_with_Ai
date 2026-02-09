@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Drone Swarm Visualization Design System - High-tech, Sci-fi Aesthetic
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Core Background & Surface */
+    --background: 220 20% 6%;
+    --foreground: 210 40% 98%;
+    --surface: 220 15% 8%;
+    --surface-elevated: 220 15% 12%;
+
+    /* Card & Modal Surfaces */
+    --card: 220 15% 10%;
+    --card-foreground: 210 40% 95%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    /* Primary Neon Blue (Main UI) */
+    --primary: 200 100% 60%;
+    --primary-foreground: 220 20% 6%;
+    --primary-glow: 200 100% 70%;
+    --primary-dim: 200 60% 40%;
+
+    /* Secondary Neon Purple (Accents) */
+    --secondary: 280 100% 70%;
+    --secondary-foreground: 220 20% 6%;
+    --secondary-glow: 280 100% 80%;
+    --secondary-dim: 280 60% 50%;
+
+    /* Accent Neon Green (Success/Active) */
+    --accent: 140 100% 60%;
+    --accent-foreground: 220 20% 6%;
+    --accent-glow: 140 100% 70%;
+    --accent-dim: 140 60% 40%;
+
+    /* Warning/Alert Neon Orange */
+    --warning: 30 100% 60%;
+    --warning-foreground: 220 20% 6%;
+    --warning-glow: 30 100% 70%;
+
+    /* Destructive Neon Red */
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 220 20% 6%;
+    --destructive-glow: 0 100% 70%;
+
+    /* Muted/Subdued */
+    --muted: 220 15% 15%;
+    --muted-foreground: 210 20% 70%;
+
+    /* Borders & Inputs */
+    --border: 220 15% 20%;
+    --input: 220 15% 15%;
+    --ring: 200 100% 60%;
+
+    /* Drone Swarm Specific Colors */
+    --swarm-alpha: 200 100% 60%;      /* Blue swarm */
+    --swarm-beta: 280 100% 70%;       /* Purple swarm */
+    --swarm-gamma: 140 100% 60%;      /* Green swarm */
+    --swarm-delta: 30 100% 60%;       /* Orange swarm */
+    --swarm-epsilon: 0 100% 60%;      /* Red swarm */
+
+    /* Task State Colors */
+    --task-idle: 210 20% 70%;
+    --task-patrol: 200 80% 60%;
+    --task-search: 280 80% 70%;
+    --task-rescue: 30 90% 60%;
+    --task-attack: 0 90% 60%;
+
+    /* Battery Level Colors */
+    --battery-high: 140 100% 60%;     /* Green */
+    --battery-medium: 50 100% 60%;    /* Yellow */
+    --battery-low: 30 100% 60%;       /* Orange */
+    --battery-critical: 0 100% 60%;   /* Red */
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-surface: linear-gradient(180deg, hsl(var(--surface)), hsl(var(--background)));
+    --gradient-neon: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
+
+    /* Shadows & Glows */
+    --shadow-neon: 0 0 20px hsl(var(--primary) / 0.5);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
+    --shadow-elevated: 0 8px 32px hsl(220 20% 0% / 0.6);
+
+    /* Animation Values */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --pulse-duration: 2s;
+
+    --radius: 0.75rem;
+    --radius-lg: 1rem;
+  }
+
+  /* Custom animations and utilities */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .pulse-neon {
+    animation: pulse-neon var(--pulse-duration) ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-neon {
+    from {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.5), 0 0 10px hsl(var(--primary) / 0.5), 0 0 15px hsl(var(--primary) / 0.5);
+    }
+    to {
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.8), 0 0 20px hsl(var(--primary) / 0.8), 0 0 30px hsl(var(--primary) / 0.8);
+    }
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(200, 200, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 200, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

@@ -1,0 +1,73 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 2158 >>
+stream
+BT
+/F1 12 Tf
+72 720 Td
+(Drone Swarm Visualization  Code Walkthrough) Tj
+T* () Tj
+T* (1. Data Pipeline) Tj
+T* (   - excelDataset.ts stores the curated drone telemetry.) Tj
+T* (   - mockData.ts exposes helpers \(generateMockData, getDronesAtTime, getDroneTrajectory\).) Tj
+T* (   - scripts/generate_dataset_from_excel.py refreshes the dataset from spreadsheets.) Tj
+T* () Tj
+T* (2. App Initialization \(main.tsx, App.tsx\)) Tj
+T* (   - React mounts in index.html#root and wires up routing plus global UI providers.) Tj
+T* () Tj
+T* (3. Dashboard Composition \(DroneSwarmDashboard.tsx\)) Tj
+T* (   - Loads the dataset once, syncs timeline state, and derives filtered drone slices.) Tj
+T* (   - Splits the viewport into control panel, 3D scene, 2D range map, and analytics tabs.) Tj
+T* () Tj
+T* (4. Control Panel \(control-panel.tsx\)) Tj
+T* (   - Toggle swarms, tasks, battery range, trajectories, velocity vectors, and detection rings.) Tj
+T* () Tj
+T* (5. Temporal Logic) Tj
+T* (   - Timeline component animates playback and exposes scrub/speed controls.) Tj
+T* (   - Interpolation blends consecutive time points for smooth motion.) Tj
+T* () Tj
+T* (6. 3D Scene \(DroneVisualization3D.tsx\)) Tj
+T* (   - Renders drones, detection halos, velocity arrows, and optional trajectories.) Tj
+T* (   - Shares time-point colours with the 2D map so both views stay in sync.) Tj
+T* () Tj
+T* (7. 2D Range Map \(DroneRangeMap2D.tsx\)) Tj
+T* (   - Projects drones onto a top-down grid, draws detection discs and glow markers.) Tj
+T* (   - Legends translate swarm IDs \(SW-1 &\) and time-point labels for quick lookup.) Tj
+T* () Tj
+T* (8. Analytics \(DroneStatistics.tsx\)) Tj
+T* (   - Summaries cover battery buckets, task allocation, swarm distribution, and alerts.) Tj
+T* () Tj
+T* (9. Styling & Assets) Tj
+T* (   - index.html defines metadata, favicon, and social previews.) Tj
+T* (   - Tailwind utility classes orchestrate layout density across components.) Tj
+T* () Tj
+T* (Use this PDF to explain how data flows from the curated dataset through the React components) Tj
+T* (to deliver coordinated 3D/2D visuals, timeline-driven playback, and operational analytics.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000002451 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2521
+%%EOF
